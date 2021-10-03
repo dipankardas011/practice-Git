@@ -1,0 +1,351 @@
+❯❯ practise-git git:(main) 17:27 git rebase -i 3a810b7146e71ce15e99423fc94ac8a78c09a71b
+hint: Waiting for your editor to close the file...
+hint: Waiting for your editor to close the file...
+[detached HEAD d4b9599] added 1
+ Date: Sun Oct 3 17:21:26 2021 +0530
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1
+ create mode 100644 2
+ create mode 100644 3
+Successfully rebased and updated refs/heads/main.
+❯❯ practise-git git:(main) 17:29 git log
+Author: dipsonu10 <dipsonu10@hotmail.com>
+Date:   Sun Oct 3 17:21:42 2021 +0530
+
+    added 4
+
+commit d4b9599a0ee346b64b4097d43174587b475cd406
+Author: dipsonu10 <dipsonu10@hotmail.com>
+Date:   Sun Oct 3 17:21:26 2021 +0530
+
+    added 1
+    added 2
+
+    added 3
+    commits merged first
+
+    commits merged second
+
+commit 3a810b7146e71ce15e99423fc94ac8a78c09a71b (origin/main)
+Merge: 55c20ec 4690f4e
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:36 2021 +0530
+
+    Merge pull request #3 from dipsonu10/test
+
+    Test
+
+commit 55c20ecf88064fac0456e4f9cbc88952e60a747b
+Merge: f43c7d6 88d52ea
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+❯❯ practise-git git:(main) 17:30 git rebase -i 3a810b7146e71ce15e99423fc94ac8a78c09a71b
+hint: Waiting for your editor to close the file...
+hint: Waiting for your editor to close the file...
+[detached HEAD 64f5dff] added 1
+ Date: Sun Oct 3 17:21:26 2021 +0530
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1
+ create mode 100644 2
+ create mode 100644 3
+ create mode 100644 4
+Successfully rebased and updated refs/heads/main.
+❯❯ practise-git git:(main) 17:31 git log
+
+    added 1
+
+    added 2
+
+    added 3
+    commits merged first
+
+    commits merged second
+
+    added 4
+    "Merged"
+
+commit 3a810b7146e71ce15e99423fc94ac8a78c09a71b (origin/main)
+Merge: 55c20ec 4690f4e
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:36 2021 +0530
+
+    Merge pull request #3 from dipsonu10/test
+
+    Test
+
+commit 55c20ecf88064fac0456e4f9cbc88952e60a747b
+Merge: f43c7d6 88d52ea
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:06 2021 +0530
+
+    Merge pull request #2 from dipsonu10/demo
+❯❯ practise-git git:(main) 17:32
+❯❯ practise-git git:(main) 17:32 git reset 3a810b7146e71ce15e99423fc94ac8a78c09a71b
+❯❯ practise-git git:(main) 17:32 git log
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:36 2021 +0530
+
+    Merge pull request #3 from dipsonu10/test
+
+    Test
+
+commit 55c20ecf88064fac0456e4f9cbc88952e60a747b
+Merge: f43c7d6 88d52ea
+
+    Merge pull request #2 from dipsonu10/demo
+
+    Demo
+
+commit f43c7d6d0b951750d5baae7d7043487b277307af
+Merge: bf0e9a0 12f399a
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+
+    Merge pull request #1 from dipsonu10/Production
+
+    Added the Readme.md
+
+commit 12f399a24fd085450c3772e213607e4c403c10f5
+Author: dipsonu10 <dipsonu10@hotmail.com>
+Date:   Sun Oct 3 16:57:15 2021 +0530
+
+❯❯ practise-git git:(main) 17:32
+❯❯ practise-git git:(main) 17:32 git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1
+        2
+        3
+        4
+
+nothing added to commit but untracked files present (use "git add" to track)
+❯❯ practise-git git:(main) 17:32 git add 1 2 3 4
+❯❯ practise-git git:(main) 17:32 git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   2
+        new file:   3
+        new file:   4
+
+❯❯ practise-git git:(main) 17:32 git status -m "Squash"
+error: unknown switch `m'
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain[=<version>]
+                          machine-readable output
+    --long                show status in long format (default)
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=<mode>]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    -M, --find-renames[=<n>]
+                          detect renames, optionally set similarity index
+    --show-ignored-directory
+                          (DEPRECATED: use --ignore=matching instead) Only show directories that match an ignore pattern name.
+    --no-lock-index       (DEPRECATED: use `git --no-optional-locks status` instead) Do not lock the index
+
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1
+ create mode 100644 2
+ create mode 100644 4
+❯❯ practise-git git:(main) 17:33 git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 273 bytes | 273.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/dipsonu10/practice-Git.git
+   3a810b7..00b9272  main -> main
+❯❯ practise-git git:(main) 17:33 notepad ThisCommitMustBeRemoved
+❯❯ practise-git git:(main) 17:34 git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+❯❯ practise-git git:(main) 17:34
+❯❯ practise-git git:(main) 17:34 git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ThisCommitMustBeRemoved.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+❯❯ practise-git git:(main) 17:34 git add .
+❯❯ practise-git git:(main) 17:34 git commit -m "this Commit must be removed"
+[main e6beb20] this Commit must be removed
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ThisCommitMustBeRemoved.txt
+❯❯ practise-git git:(main) 17:34 git log
+Author: dipsonu10 <dipsonu10@hotmail.com>
+Date:   Sun Oct 3 17:34:58 2021 +0530
+
+    this Commit must be removed
+
+commit 00b92727c5c63d56a4eade0dd21c1d96216b0caa (origin/main)
+Author: dipsonu10 <dipsonu10@hotmail.com>
+Date:   Sun Oct 3 17:33:20 2021 +0530
+
+
+commit 3a810b7146e71ce15e99423fc94ac8a78c09a71b
+Merge: 55c20ec 4690f4e
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:36 2021 +0530
+
+    Merge pull request #3 from dipsonu10/test
+
+    Test
+
+commit 55c20ecf88064fac0456e4f9cbc88952e60a747b
+Merge: f43c7d6 88d52ea
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:06 2021 +0530
+
+    Merge pull request #2 from dipsonu10/demo
+
+    Demo
+
+commit f43c7d6d0b951750d5baae7d7043487b277307af
+❯❯ practise-git git:(main) 17:35 git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 295.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/dipsonu10/practice-Git.git
+   00b9272..e6beb20  main -> main
+❯❯ practise-git git:(main) 17:35 git log
+Author: dipsonu10 <dipsonu10@hotmail.com>
+
+    this Commit must be removed
+
+commit 00b92727c5c63d56a4eade0dd21c1d96216b0caa
+Author: dipsonu10 <dipsonu10@hotmail.com>
+Date:   Sun Oct 3 17:33:20 2021 +0530
+
+    Squash
+
+commit 3a810b7146e71ce15e99423fc94ac8a78c09a71b
+Merge: 55c20ec 4690f4e
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:36 2021 +0530
+
+    Merge pull request #3 from dipsonu10/test
+
+    Test
+
+commit 55c20ecf88064fac0456e4f9cbc88952e60a747b
+Merge: f43c7d6 88d52ea
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:06 2021 +0530
+
+    Merge pull request #2 from dipsonu10/demo
+
+    Demo
+
+commit f43c7d6d0b951750d5baae7d7043487b277307af
+❯❯ practise-git git:(main) 17:36 git reset --hard e6beb2057899fe05f29409b7b32b1502d99212a3
+HEAD is now at e6beb20 this Commit must be removed
+❯❯ practise-git git:(main) 17:36 git log
+Author: dipsonu10 <dipsonu10@hotmail.com>
+
+    this Commit must be removed
+
+commit 00b92727c5c63d56a4eade0dd21c1d96216b0caa
+Author: dipsonu10 <dipsonu10@hotmail.com>
+Date:   Sun Oct 3 17:33:20 2021 +0530
+
+    Squash
+
+commit 3a810b7146e71ce15e99423fc94ac8a78c09a71b
+Merge: 55c20ec 4690f4e
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:36 2021 +0530
+
+    Merge pull request #3 from dipsonu10/test
+
+    Test
+
+commit 55c20ecf88064fac0456e4f9cbc88952e60a747b
+Merge: f43c7d6 88d52ea
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:06 2021 +0530
+
+    Merge pull request #2 from dipsonu10/demo
+
+    Demo
+
+commit f43c7d6d0b951750d5baae7d7043487b277307af
+❯❯ practise-git git:(main) 17:37 git reset --hard 00b92727c5c63d56a4eade0dd21c1d96216b0caa
+HEAD is now at 00b9272 Squash
+❯❯ practise-git git:(main) 17:37 git log
+Author: dipsonu10 <dipsonu10@hotmail.com>
+Date:   Sun Oct 3 17:33:20 2021 +0530
+
+    Squash
+
+commit 3a810b7146e71ce15e99423fc94ac8a78c09a71b
+Merge: 55c20ec 4690f4e
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:59:36 2021 +0530
+
+    Merge pull request #3 from dipsonu10/test
+
+    Test
+
+commit 55c20ecf88064fac0456e4f9cbc88952e60a747b
+Merge: f43c7d6 88d52ea
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+
+    Merge pull request #2 from dipsonu10/demo
+
+    Demo
+
+Merge: bf0e9a0 12f399a
+Author: Dipankar Das <65275144+dipsonu10@users.noreply.github.com>
+Date:   Sun Oct 3 16:58:10 2021 +0530
+
+    Merge pull request #1 from dipsonu10/Production
+
+❯❯ practise-git git:(main) 17:37 git log --graph --pretty=oneline --abbrev-commit
+*   3a810b7 Merge pull request #3 from dipsonu10/test
+|\
+| * 4690f4e added the cpp executable file
+| * d47bc9b compiled the java program
+* |   55c20ec Merge pull request #2 from dipsonu10/demo
+|\ \
+| * | 88d52ea (origin/demo) Added the Java program
+| |/
+| * f949fae (origin/production) Added the hello world C++ program
+* |   f43c7d6 Merge pull request #1 from dipsonu10/Production
+|\ \
+| |/
+|/|
+| * 12f399a Added the Readme.md
+|/
+* bf0e9a0 Added the hello.txt
+❯❯ practise-git git:(main) 17:37 git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+❯❯ practise-git git:(main)  17:37 git push origin main
+To https://github.com/dipsonu10/practice-Git.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/dipsonu10/practice-Git.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+❯❯ practise-git git:(main)  17:37 git push origin main -f
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/dipsonu10/practice-Git.git
+ + e6beb20...00b9272 main -> main (forced update)
